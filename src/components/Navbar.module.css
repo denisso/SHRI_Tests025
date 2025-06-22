@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  display: flex;
+  gap: 4px;
+  padding: 10px;
+}
+
+.link {
+  display: flex;
+  gap: 4px;
+  padding: 10px 0;
+}
+
+.link.active {
+  border-bottom: 2px solid;
+}

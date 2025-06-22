@@ -1,0 +1,42 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  background-color: white;
+  padding: 40px;
+  border-radius: 45px;
+  width: 1000px;
+  max-height: 100vh;
+  box-shadow: -6px 21px 100px 0px #00000059;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0;
+  left: 110%;
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.content {
+  height: 90vh;
+  overflow-y: auto;
+}

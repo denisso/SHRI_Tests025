@@ -1,0 +1,75 @@
+.page,
+.reports {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.reports {
+  gap: 10px;
+}
+
+.report {
+  display: flex;
+  gap: 40px;
+}
+
+.inactive {
+  opacity: 0.5;
+}
+
+.data {
+  flex: 1;
+  background-color: #cb81ff;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.data .field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.data .field:last-child {
+  text-align: right;
+}
+.data,
+.btn-trash {
+  height: 92px;
+}
+
+.btn-trash {
+  width: 92px;
+  min-width: 92px;
+  border-radius: 20px;
+  background-color: white;
+  display: grid;
+  place-items: center;
+}
+
+.buttons{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn{
+    height: 80px;
+    padding: 27px;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.btn-more{
+    background-color: #2AE881;
+}
+
+.btn-clean{
+    background-color: #201B10;
+    color: white;
+}

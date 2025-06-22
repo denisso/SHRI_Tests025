@@ -1,0 +1,49 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.message {
+  text-align: center;
+}
+
+.btn {
+  height: 70px;
+  border-radius: 10px;
+  padding: 15px 27px;
+  display: grid;
+  place-items: center;
+}
+
+.text {
+  text-align: center;
+}
+
+.start {
+  background-color: #2ae881;
+}
+
+.generation {
+  background-color: #cb81ff;
+}
+
+.error {
+  background-color: #ff5f00;
+}
+
+.finish {
+  background-color: #d4fae6;
+}
+
+.close {
+  background-color: #201b10;
+  padding: 0;
+  width: 70px;
+}

@@ -1,0 +1,20 @@
+.file-upload {
+  display: flex;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.message {
+  color: #cb81ff;
+  font-size: 40px;
+  text-align: center;
+}
+
+.results {
+  display: grid;
+  place-items: center;
+}

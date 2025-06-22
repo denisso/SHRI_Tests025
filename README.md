@@ -6,8 +6,8 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone <repo-url>
-   cd <repo-folder>
+   git clone https://github.com/denisso/SHRI_React2025.git
+   cd SHRI_React2025
 ````
 
 2. Установите зависимости:

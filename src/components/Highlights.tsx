@@ -80,7 +80,7 @@ const Field = ({
   if (field == "average_spend_galactic" && typeof value == "number") {
     result = value.toFixed(2);
   }
-  return <div className={styles.value}>{result}</div>;
+  return <div className={styles.value} id={"field-value-" + field}>{result}</div>;
 };
 
 type PropsHighlights = { columns?: number; report?: Report | null };
@@ -95,10 +95,11 @@ export default function Highlights({ columns = 2, report }: PropsHighlights) {
     <>
       <ul
         className={styles.highligts}
+        id="reports"
         style={{ "--columns": columns } as React.CSSProperties}
       >
         {order.map((field) => (
-          <li className={styles.item} key={field}>
+          <li className={styles.item} key={field} >
             <Field field={field} value={state[field]} />
             <div className={styles.desc}>{descs[field]}</div>
           </li>

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Analitic from "./pages/Analyst";
 import Generator from "./pages/Generator";
 import History from "./pages/History";
@@ -8,7 +8,7 @@ import styles from "./App.module.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <div className={styles.page}>
         <Routes>
@@ -18,7 +18,7 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </>
   );
 }
 

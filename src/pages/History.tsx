@@ -24,7 +24,7 @@ export default function History() {
   const deleteREport = useAggregateStore((store) => store.deleteREport);
   return (
     <div className={styles.page}>
-      <div className={styles.reports}>
+      <div className={styles.reports} id="reports">
         {Object.keys(reports).map((key) => (
           <div key={reports[key].date} className={styles.report}>
             <button

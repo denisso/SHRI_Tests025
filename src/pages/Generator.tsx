@@ -15,6 +15,7 @@ const Download = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
+    a.id = "download-url"
     a.download = "report.csv";
     document.body.appendChild(a);
     a.click();
@@ -50,6 +51,7 @@ const ButtonGenerate = () => {
       <button
         className={`${styles.btn} ${styles[state]}`}
         onClick={handleClick}
+        id="btn-generate"
       >
         {state == "generation" ? <Spinner /> : btnTexts[state]}
       </button>

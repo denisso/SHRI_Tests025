@@ -55,6 +55,7 @@ const ButtonFile = ({
     <>
       <div className={styles["area-btns"]}>
         <button
+          id="btn-file"
           className={`${styles["btn-file"]} ${styles[state]}`}
           onClick={() => {
             if (state !== "start") return;
@@ -72,7 +73,7 @@ const ButtonFile = ({
         <ButtonClose />
       </div>
 
-      <div>{texts[state]}</div>
+      <div id="message">{texts[state]}</div>
     </>
   );
 };
@@ -132,6 +133,7 @@ function ButtonUpload() {
 
   return shouldRenderButton ? (
     <button
+      id="btn-send"
       className={`${styles["btn-send"]} ${isActive ? styles["active"] : ""}`}
       onClick={() => {
         if (state !== "fileready") return;

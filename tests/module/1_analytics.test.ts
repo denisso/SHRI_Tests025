@@ -4,7 +4,7 @@ import { useAggregateStore } from "../../src/stores/aggregator.ts";
 import { createReadStream } from "fs";
 import { Readable } from "stream";
 
-describe("useAggregateStore", () => {
+describe("Analyst", () => {
   beforeEach(() => {
     localStorage.clear();
   });
@@ -25,7 +25,7 @@ describe("useAggregateStore", () => {
     act(() => {
       result.current.setFile(file);
     });
-    // как только зада файл состояние меняется на fileready
+    // как только задаем файл состояние меняется на fileready
     expect(result.current.file?.name).toBe("file.csv");
     expect(result.current.state).toBe("fileready");
     // тестовый пример ответа от сервера

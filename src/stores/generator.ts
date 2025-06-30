@@ -45,16 +45,16 @@ export const useGeneratorStore = create<State>((set, get) => {
         const reader = res.body?.getReader();
         const decoder = new TextDecoder();
 
-        const contentDisposition = res.headers.get("Content-Disposition");
-        let filename = "report.csv"; // по умолчанию
+        // const contentDisposition = res.headers.get("Content-Disposition");
+        // let filename = "report.csv"; // по умолчанию
 
-        if (contentDisposition) {
-          const match = /filename="?([^"]+)"?/.exec(contentDisposition);
-          if (match) {
-            filename = match[1];
-          }
-        }
-        console.log(filename);
+        // if (contentDisposition) {
+        //   const match = /filename="?([^"]+)"?/.exec(contentDisposition);
+        //   if (match) {
+        //     filename = match[1];
+        //   }
+        // }
+
         let full = "";
 
         while (true) {

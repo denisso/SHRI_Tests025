@@ -21,7 +21,7 @@ export default function History() {
   const [report, setReport] = React.useState<Report | null>(null);
   const reports = useAggregateStore((store) => store.reports);
   const cleanReports = useAggregateStore((store) => store.cleanReports);
-  const deleteREport = useAggregateStore((store) => store.deleteREport);
+  const deleteReport = useAggregateStore((store) => store.deleteReport);
   return (
     <div className={styles.page}>
       <div className={styles.reports} id="reports">
@@ -60,7 +60,7 @@ export default function History() {
             </button>
             <button
               className={styles["btn-trash"]}
-              onClick={() => deleteREport(key)}
+              onClick={() => deleteReport(key)}
             >
               <Img src="btn-trash.svg" alt="trash" />
             </button>

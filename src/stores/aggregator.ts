@@ -35,7 +35,7 @@ export type State = {
   reset: () => void;
   cleanReports: () => void;
   addReport: (report: Report | null) => void;
-  deleteREport: (id: string) => void;
+  deleteReport: (id: string) => void;
 };
 
 function concatUint8Arrays(array1: Uint8Array, array2: Uint8Array) {
@@ -63,7 +63,7 @@ export const useAggregateStore = create<State>((set, get) => ({
     }
     set({ file, state: "fileready" });
   },
-  deleteREport: (id: string) => {
+  deleteReport: (id: string) => {
     let { reports } = get();
     delete reports[id];
     reports = {

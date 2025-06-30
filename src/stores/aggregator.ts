@@ -92,19 +92,20 @@ export const useAggregateStore = create<State>((set, get) => ({
     localStorage.setItem("reports", JSON.stringify(reports));
   },
   startAggregation: async () => {
-    const { file, state, addReport } = get();
+    // const { file, state, addReport } = get();
+    const state = get();
 
-    if (!file || state !== "fileready") {
+    if (!state.file || state.state !== "fileready") {
       set({ state: "error" });
       return;
     }
 
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("file", state.file);
     let res;
     try {
       let rows = 5000;
-      const coe = file.size / 150000;
+      const coe = state.file.size / 150000;
       if (coe > 100 && coe <= 1000) {
         rows = (rows * coe) / 100;
       } else if (coe > 1000) {
@@ -119,17 +120,18 @@ export const useAggregateStore = create<State>((set, get) => ({
       });
     } catch {
       set({ state: "error" });
-      addReport(null);
+      state.addReport(null);
 
       return;
     }
     if (res && !res.ok) {
       // тут дожна быть обработка ошибок 400 и 500 но...
       set({ state: "error" });
-      addReport(null);
+      state.addReport(null);
       return;
     }
     set({ state: "parsing" });
+    await new Promise((r) => setTimeout(r, 100));
     const reader = res.body?.getReader();
     const decoder = new TextDecoder();
     let prev: Uint8Array | null = new Uint8Array(0);
@@ -162,7 +164,7 @@ export const useAggregateStore = create<State>((set, get) => ({
       set({ report });
     }
     prev = null;
-    addReport(report);
+    state.addReport(report);
     set({ state: "finish" });
   },
   reset: () => {
